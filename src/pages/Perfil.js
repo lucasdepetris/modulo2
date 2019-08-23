@@ -1,5 +1,6 @@
 import React, { Component ,Fragment} from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import Spinner from "react-bootstrap/Spinner";
 
 class Perfil extends Component {
   constructor(props) {
@@ -7,7 +8,8 @@ class Perfil extends Component {
 
     /* Estado */
     this.state = {
-      usuario: {}
+      usuario: {},
+      isLoading:true
     };
   }
 
@@ -17,7 +19,7 @@ class Perfil extends Component {
 
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(response => response.json())
-      .then(data => this.setState({ usuario: data }))
+      .then(data => this.setState({ usuario: data ,isLoading:false}))
       .catch(error => {
         console.log(error);
       });
@@ -25,6 +27,9 @@ class Perfil extends Component {
 
   render() {
     const usuario = this.state.usuario;
+
+    const { isLoading } = this.state;
+
     return (
         <Fragment>
         <Breadcrumb>
@@ -32,10 +37,12 @@ class Perfil extends Component {
                 <Breadcrumb.Item active>Perfil</Breadcrumb.Item>
         </Breadcrumb>
         <h1>Detalle Usuario</h1>
-    
-        <h5>{usuario.name}</h5>
+        {!isLoading ? <Fragment><h5>{usuario.name}</h5>
         <h5>{usuario.email}</h5>
-        <h5>{usuario.username}</h5>
+        <h5>{usuario.username}</h5></Fragment>:<Spinner animation="border" role="status">
+          <span className="sr-only">Cargando...</span>
+        </Spinner>}
+        
       </Fragment>
     );
   }
