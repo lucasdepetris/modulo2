@@ -36,7 +36,7 @@ class Perfil extends Component {
                 <Breadcrumb.Item href="/home">Home</Breadcrumb.Item>
                 <Breadcrumb.Item active>Perfil</Breadcrumb.Item>
         </Breadcrumb>
-        <h1>Detalle Usuario</h1>
+        <h1>Perfil Usuario</h1>
         {!isLoading ? <Fragment><h5>{usuario.name}</h5>
         <h5>{usuario.email}</h5>
         <h5>{usuario.username}</h5></Fragment>:<Spinner animation="border" role="status">
