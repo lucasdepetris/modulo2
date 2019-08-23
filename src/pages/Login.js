@@ -4,12 +4,29 @@ import Button from 'react-bootstrap/Button';
 
 /* Componente presentacional */
 export default class  LoginPage extends Component {
-
-    state = {
-    
-    }
-  
+    constructor() {
+        super();
+        this.state = {
+          email: "",
+          password: "",
+        };
+        this.handleChange = this.handleChange.bind(this);
+      }
+      handleSubmit(event) {
+        console.log(this.state);
+        event.preventDefault();
+      }
+      handleChange(event) {
+        var target = event.target;
+        var name = target["name"];
+        console.log(name);
+        this.setState({
+          [name]: target.value
+        });
+      }
+   
     handleLogin = () => {
+      console.log(this.state);
       this.props.history.push('/home');
     }
 
@@ -20,7 +37,7 @@ export default class  LoginPage extends Component {
             <Form>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control onChange={this.handleChange} name="email" value={this.state.email} type="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                     </Form.Text>
@@ -28,7 +45,7 @@ export default class  LoginPage extends Component {
 
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control  onChange={this.handleChange}  name="password" value={this.state.password} type="password" placeholder="Password" />
                 </Form.Group>
                 <Form.Group controlId="formBasicChecbox">
                     <Form.Check type="checkbox" label="Check me out" />
