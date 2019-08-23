@@ -89,23 +89,12 @@ class Home extends Component {
     else {
       return (
         <Fragment>
+          <h1>Home</h1>
           <Usuarios usuarios={this.state.usuarios} />
 
           <Button id="ADD" onClick={this.handleClick}>
             Agregar Usuario
           </Button>
-          <br />
-          <br />
-          <Button
-            variant="warning"
-            onMouseEnter={() => console.log("mouseEnter")}
-            onClick={e => this.handleSetUpdate(e, this.state.update)}
-          >
-            Habilitar/Deshabilitar Actualizacion
-          </Button>
-          <br />
-          <br />
-          <input id="CB" type="checkbox" onClick={this.handleClick} />
         </Fragment>
       );
     }

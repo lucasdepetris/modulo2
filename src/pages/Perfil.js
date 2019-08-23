@@ -1,5 +1,5 @@
 import React, { Component ,Fragment} from "react";
-
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 class Perfil extends Component {
   constructor(props) {
@@ -27,6 +27,10 @@ class Perfil extends Component {
     const usuario = this.state.usuario;
     return (
         <Fragment>
+        <Breadcrumb>
+                <Breadcrumb.Item href="/home">Home</Breadcrumb.Item>
+                <Breadcrumb.Item active>Perfil</Breadcrumb.Item>
+        </Breadcrumb>
         <h1>Detalle Usuario</h1>
     
         <h5>{usuario.name}</h5>

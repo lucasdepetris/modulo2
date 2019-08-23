@@ -4,6 +4,7 @@ import './App.css';
 import Home from "./pages/Home";
 import Login from "./pages/Login"
 import Perfil from "./pages/Perfil"
+import Register  from "./pages/Register"
 import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
 
 function App() {
@@ -25,8 +26,9 @@ function App() {
         <Switch>
           <Route path="/home" exact component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/registro" component={Register} />
           <Route path="/usuarios/:id" component={Perfil} />
-          
+          <Redirect from="" to="/login" />
         </Switch>
       </BrowserRouter>
     </div>

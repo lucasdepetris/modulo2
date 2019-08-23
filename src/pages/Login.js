@@ -33,8 +33,9 @@ export default class  LoginPage extends Component {
                 <Form.Group controlId="formBasicChecbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
+                <Button variant="link" href="/Registro">Registrate</Button>
                 <Button variant="primary" onClick={this.handleLogin}>
-                    Submit
+                    Login
                 </Button>
             </Form>
         </Fragment>
