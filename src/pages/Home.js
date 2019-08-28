@@ -92,9 +92,9 @@ class Home extends Component {
           <h1>Home</h1>
           <Usuarios usuarios={this.state.usuarios} />
 
-          <Button id="ADD" onClick={this.handleClick}>
+          {/* <Button id="ADD" onClick={this.handleClick}>
             Agregar Usuario
-          </Button>
+          </Button> */}
         </Fragment>
       );
     }

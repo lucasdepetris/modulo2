@@ -36,7 +36,7 @@ export default class Register extends Component {
         return(
             <Fragment>
             <h1>Registro</h1>
-            <Form>
+            <Form className="login-form"> 
                         <Form.Group controlId="formBasicName">
                             <Form.Label>Name</Form.Label>
                             <Form.Control onChange={this.handleChange} name="name" value={this.state.name} type="text" placeholder="Enter name" />

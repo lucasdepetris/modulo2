@@ -34,7 +34,7 @@ export default class  LoginPage extends Component {
         return (
             <Fragment>
             <h1>Login</h1>
-            <Form>
+            <Form className="login-form">
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control onChange={this.handleChange} name="email" value={this.state.email} type="email" placeholder="Enter email" />
