@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login"
 import Perfil from "./pages/Perfil"
 import Register  from "./pages/Register"
+import NavBar from "./components/NavBarPage"
 import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <Link to="/contacto">Contacto</Link>
           </li>
         </nav> */}
-       
+        <NavBar />
         <Switch>
           <Route path="/home" exact component={Home} />
           <Route path="/login" component={Login} />
